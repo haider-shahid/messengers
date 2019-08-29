@@ -19,10 +19,11 @@
         </div>
       </div>
 
-      <div class="ui left icon input">
-        <input type="text" placeholder="Enter Your Message here...">
-        <i class="comments icon"></i>
-      </div>
+      <%= form_for(@msg,html:{class:"ui action input",role:"form"},url:message_path)  do |f|%>
+        <%= f.text_field :body,placeholder:"Enter your message here.."%>
+        <%=f.button "Send",class:"ui orange button" %>
+      <% end %>
+
     </div>
   </div>
 
