@@ -11,7 +11,11 @@
       <div class="content">
         <div class="ui feed">
           <h4 class="ui header">Conversation</h4>
-          <em><strong>Haider :</strong></em> Your Message will be displayed here..
+          <% @messages.each do |msg| %>
+            <em><strong><%= msg.user.username %> : </strong></em>
+            <em><%= msg.body %></em>
+            <br>
+          <% end %>
         </div>
       </div>
 
@@ -19,7 +23,6 @@
         <input type="text" placeholder="Enter Your Message here...">
         <i class="comments icon"></i>
       </div>
-
     </div>
   </div>
 
